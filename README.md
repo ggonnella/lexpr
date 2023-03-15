@@ -4,7 +4,8 @@ Lexpr is a simple package containing a
 logical expressions parser developed using a Lark grammar.
 
 The expressions may contain:
-- entity identifiers
+- entity identifiers, consisting of letters, digits and underscores
+  and not starting with a digit
 - the binary operators ``|`` (or), ``&`` (and)
 - the unary operator ``!`` (not).
 - balanced pairs of round parentheses
