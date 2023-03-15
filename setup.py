@@ -11,7 +11,7 @@ import sys
 if not sys.version_info[0] == 3:
   sys.exit("Sorry, only Python 3 is supported")
 
-setup(name='lark',
+setup(name='lexpr',
       version='0.1',
       description=\
         'A parser for simple logical expressions of identifiers',
