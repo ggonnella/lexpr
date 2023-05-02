@@ -22,3 +22,17 @@ class Parser():
       errmsg = f"Invalid logic expression: {e}\n"
       errmsg += "Invalid/unbalanced expression"
       raise error.LexprParserError(errmsg)
+
+  def _get_identifiers(self, tree, identifiers=None):
+      if identifiers is None:
+          identifiers = []
+      if isinstance(tree, lark.Tree):
+          for child in tree.children:
+              self._get_identifiers(child, identifiers)
+      elif isinstance(tree, lark.Token) and tree.type == 'IDENTIFIER':
+          identifiers.append(tree.value)
+      return identifiers
+
+  def list_identifiers(self, text):
+    return self._get_identifiers(self.parse(text))
+
